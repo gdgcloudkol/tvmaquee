@@ -103,7 +103,10 @@
           if (number == 4 || number == 5) {
             document.getElementById("div").style.color = "#4285f4";
           }
-        } else document.getElementById("div").style.color = "black";
+        } else {
+          document.getElementById("div").style.color = "black";
+          document.getElementById("div").style.display = "none";
+        }
       }, 400);
     </script>
   </body>
