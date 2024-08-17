@@ -35,61 +35,60 @@
       document.getElementById("div").innerText = showStr;
       // get system time
       setInterval(() => {
-        const time = new Date()
+        const actualtime = new Date()
           .toLocaleTimeString("en-US", { hour12: false })
           .split(":")[2];
-        console.log(time);
-        if (time > 0 && time < 30 && number == 1) {
+        let time = 0;
+
+        if (actualtime < 8) time = actualtime;
+        else if (actualtime < 17) time = 17 - actualtime;
+        else if (actualtime < 37) time = 37 - actualtime;
+        else if (actualtime < 60) time = 57 - actualtime;
+        console.log(actualtime, time);
+
+        if (time < 8 || time < 17 || time < 37)
+          document.getElementById("div").style.display = "none";
+        else document.getElementById("div").style.display = "block";
+
+        if (number == 1 && (time > 0 || time > 18 || time > 38)) {
           document.getElementById("div").style.display = "block";
-        } else document.getElementById("div").style.display = "none";
-        if (time > 3 && time < 30 && number == 2) {
+        } else if (number == 2 && (time > 1 || time > 19 || time > 39)) {
           document.getElementById("div").style.display = "block";
-        } else document.getElementById("div").style.display = "none";
-        if (time > 6 && time < 30 && number == 3) {
+        } else if (number == 3 && (time > 2 || time > 20 || time > 40)) {
           document.getElementById("div").style.display = "block";
-        } else document.getElementById("div").style.display = "none";
-        if (time > 9 && time < 30 && number == 4) {
+        } else if (number == 4 && (time > 3 || time > 21 || time > 41)) {
           document.getElementById("div").style.display = "block";
-        } else document.getElementById("div").style.display = "none";
-        if (time > 12 && time < 30 && number == 5) {
+        } else if (number == 5 && (time > 4 || time > 22 || time > 42)) {
           document.getElementById("div").style.display = "block";
-        } else document.getElementById("div").style.display = "none";
-        if (time > 15 && time < 30 && number == 6) {
+        } else if (number == 6 && (time > 5 || time > 23 || time > 43)) {
           document.getElementById("div").style.display = "block";
-        } else document.getElementById("div").style.display = "none";
-        if (time > 18 && time < 30 && number == 7) {
+        } else if (number == 7 && (time > 6 || time > 24 || time > 44)) {
           document.getElementById("div").style.display = "block";
-        } else document.getElementById("div").style.display = "none";
-        if (time > 21 && time < 30 && number == 8) {
+        } else if (number == 8 && (time > 7 || time > 25 || time > 45)) {
           document.getElementById("div").style.display = "block";
-        } else document.getElementById("div").style.display = "none";
+        }
 
         // hiding starts here
-        if (time > 30 && time < 53 && number == 8) {
+        if (number == 8 && (time > 8 || time > 28 || time > 48)) {
           document.getElementById("div").style.display = "none";
-        } else document.getElementById("div").style.display = "block";
-        if (time > 33 && time < 53 && number == 7) {
+        } else if (number == 7 && (time > 9 || time > 29 || time > 49)) {
           document.getElementById("div").style.display = "none";
-        } else document.getElementById("div").style.display = "block";
-        if (time > 36 && time < 53 && number == 6) {
+        } else if (number == 6 && (time > 10 || time > 30 || time > 50)) {
           document.getElementById("div").style.display = "none";
-        } else document.getElementById("div").style.display = "block";
-        if (time > 39 && time < 53 && number == 5) {
+        } else if (number == 5 && (time > 11 || time > 31 || time > 51)) {
           document.getElementById("div").style.display = "none";
-        } else document.getElementById("div").style.display = "block";
-        if (time > 42 && time < 53 && number == 4) {
+        } else if (number == 4 && (time > 12 || time > 32 || time > 52)) {
           document.getElementById("div").style.display = "none";
-        } else document.getElementById("div").style.display = "block";
-        if (time > 45 && time < 53 && number == 3) {
+        } else if (number == 3 && (time > 13 || time > 33 || time > 53)) {
           document.getElementById("div").style.display = "none";
-        } else document.getElementById("div").style.display = "block";
-        if (time > 48 && time < 53 && number == 3) {
+        } else if (number == 2 && (time > 14 || time > 34 || time > 54)) {
           document.getElementById("div").style.display = "none";
-        } else document.getElementById("div").style.display = "block";
-        if (time > 51 && time < 53 && number == 1) {
+        } else if (number == 1 && (time > 15 || time > 35 || time > 55)) {
           document.getElementById("div").style.display = "none";
-        } else document.getElementById("div").style.display = "block";
-        if (time > 52) {
+        }
+
+        // colouring starts here
+        if (time > 16 || time > 36 || time > 57) {
           document.getElementById("div").style.display = "block";
           if (number == 1 || number == 8) {
             document.getElementById("div").style.color = "#e84435";
@@ -105,7 +104,6 @@
           }
         } else {
           document.getElementById("div").style.color = "black";
-          document.getElementById("div").style.display = "none";
         }
       }, 400);
     </script>
