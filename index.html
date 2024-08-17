@@ -89,7 +89,7 @@
         if (time > 51 && time < 53 && number == 1) {
           document.getElementById("div").style.display = "none";
         } else document.getElementById("div").style.display = "block";
-        if (time > 53) {
+        if (time > 52) {
           document.getElementById("div").style.display = "block";
           if (number == 1 || number == 8) {
             document.getElementById("div").style.color = "#e84435";
@@ -103,7 +103,7 @@
           if (number == 4 || number == 5) {
             document.getElementById("div").style.color = "#4285f4";
           }
-        }
+        } else document.getElementById("div").style.color = "black";
       }, 400);
     </script>
   </body>
