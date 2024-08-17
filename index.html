@@ -1,0 +1,95 @@
+<html>
+  <head>
+    <title>#GCCDKOL</title>
+    <style>
+      @font-face {
+        font-family: "Google Sans Serif";
+        src: url("./GoogleSans-Regular_0.ttf");
+      }
+      body {
+        font-family: "Google Sans Serif";
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+      #div {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        font-size: 100px;
+        scale: 500%;
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="div"></div>
+    <script>
+      const params = new URLSearchParams(window.location.search);
+      const number = params.get("c");
+      const str = "#GCCDKOL";
+      const showStr = str[number - 1];
+      document.getElementById("div").innerText = showStr;
+      // get system time
+      setInterval(() => {
+        const time = new Date()
+          .toLocaleTimeString("en-US", { hour12: false })
+          .split(":")[2];
+        console.log(time);
+        if (time > 0 && time < 30 && number == 1) {
+          document.getElementById("div").style.display = "block";
+        } else if (time > 3 && time < 30 && number == 2) {
+          document.getElementById("div").style.display = "block";
+        } else if (time > 6 && time < 30 && number == 3) {
+          document.getElementById("div").style.display = "block";
+        } else if (time > 9 && time < 30 && number == 4) {
+          document.getElementById("div").style.display = "block";
+        } else if (time > 12 && time < 30 && number == 5) {
+          document.getElementById("div").style.display = "block";
+        } else if (time > 15 && time < 30 && number == 6) {
+          document.getElementById("div").style.display = "block";
+        } else if (time > 18 && time < 30 && number == 7) {
+          document.getElementById("div").style.display = "block";
+        } else if (time > 21 && time < 30 && number == 8) {
+          document.getElementById("div").style.display = "block";
+        } else if (time > 30 && time < 53 && number == 8) {
+          document.getElementById("div").style.display = "none";
+        } else if (time > 33 && time < 53 && number == 7) {
+          document.getElementById("div").style.display = "none";
+        } else if (time > 36 && time < 53 && number == 6) {
+          document.getElementById("div").style.display = "none";
+        } else if (time > 39 && time < 53 && number == 5) {
+          document.getElementById("div").style.display = "none";
+        } else if (time > 42 && time < 53 && number == 4) {
+          document.getElementById("div").style.display = "none";
+        } else if (time > 45 && time < 53 && number == 3) {
+          document.getElementById("div").style.display = "none";
+        } else if (time > 48 && time < 53 && number == 3) {
+          document.getElementById("div").style.display = "none";
+        } else if (time > 51 && time < 53 && number == 1) {
+          document.getElementById("div").style.display = "none";
+        } else if (time > 53) {
+          document.getElementById("div").style.display = "block";
+          if (number == 1 || number == 8) {
+            document.getElementById("div").style.color = "#e84435";
+          }
+          if (number == 2 || number == 7) {
+            document.getElementById("div").style.color = "#0f9d58";
+          }
+          if (number == 3 || number == 6) {
+            document.getElementById("div").style.color = "#fbbc04";
+          }
+          if (number == 4 || number == 5) {
+            document.getElementById("div").style.color = "#4285f4";
+          }
+        } else {
+          document.getElementById("div").style.display = "none";
+          document.getElementById("div").style.color = "black";
+        }
+      }, 400);
+    </script>
+  </body>
+</html>
